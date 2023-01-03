@@ -1,0 +1,37 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+
+<h4 class="text-center mt-3" style="padding-top: 15px; color: orangered">
+  Submit Your Job Application
+</h4>
+<html lang="en">
+  <head>
+{% include 'navigation.html' %}
+<div class="container-fluid" style="margin-top: 1%;width: 94%; height: 80%;background-image: url(../static/images/back.jpg);">
+  <div>
+    <div class="container h-100">
+      <div class="row h-100 justify-content-center align-items-center">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Apply</title>
+      </head>
+
+      <body>
+        
+        <form method="post" enctype="multipart/form-data">
+          <br>
+          {% csrf_token %} {{ form|crispy }}
+          <br>
+          <input type="submit" value="Submit" />
+          <br>
+          <br>
+          <br>
+        </form>
+      </body>
+    </div>
+</div>
+</html>
+
+
+
